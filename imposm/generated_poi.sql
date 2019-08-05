@@ -1,6 +1,6 @@
 CREATE OR REPLACE FUNCTION slice_language_tags(tags hstore)
 RETURNS hstore AS $$
-    SELECT delete_empty_keys(slice(tags, ARRAY['name:br', 'name:ca', 'name:co', 'name:cs', 'name:de', 'name:en', 'name:eo', 'name:es', 'name:eu', 'name:fr', 'name:it', 'name:la', 'name:nl', 'name:oc', 'name:pl', 'name:pt', 'name:ru', 'int_name', 'loc_name', 'name', 'wikidata', 'wikipedia']))
+    SELECT delete_empty_keys(slice(tags, ARRAY['name:en', 'name:la', 'name:ru', 'name:kk', 'name:be', 'int_name', 'loc_name', 'name', 'wikidata', 'wikipedia']))
 $$ LANGUAGE SQL IMMUTABLE;
 DO $$ BEGIN RAISE NOTICE 'Layer poi'; END$$;DO $$
 BEGIN

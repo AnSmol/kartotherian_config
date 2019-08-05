@@ -1,7 +1,11 @@
 Layer:
 - Datasource:
     dbname: gis
-    extent: [-20037508.34, -20037508.34, 20037508.34, 20037508.34]
+    extent:
+    - -20037508.34
+    - -20037508.34
+    - 20037508.34
+    - 20037508.34
     geometry_field: geometry
     host: localhost
     key_field: ''
@@ -15,12 +19,17 @@ Layer:
     type: postgis
     user: nice_user
   id: water
-  properties: {buffer-size: 4}
+  properties:
+    buffer-size: 4
   srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0
     +units=m +nadgrids=@null +wktext +no_defs +over
 - Datasource:
     dbname: gis
-    extent: [-20037508.34, -20037508.34, 20037508.34, 20037508.34]
+    extent:
+    - -20037508.34
+    - -20037508.34
+    - 20037508.34
+    - 20037508.34
     geometry_field: geometry
     host: localhost
     key_field: ''
@@ -29,27 +38,26 @@ Layer:
     password: nice_password
     port: 5432
     srid: 900913
-    table: (SELECT geometry, name, name_en, name_de, NULLIF(tags->'name:br', '') AS
-      "name:br", NULLIF(tags->'name:ca', '') AS "name:ca", NULLIF(tags->'name:co',
-      '') AS "name:co", NULLIF(tags->'name:cs', '') AS "name:cs", NULLIF(tags->'name:de',
-      '') AS "name:de", NULLIF(tags->'name:en', '') AS "name:en", NULLIF(tags->'name:eo',
-      '') AS "name:eo", NULLIF(tags->'name:es', '') AS "name:es", NULLIF(tags->'name:eu',
-      '') AS "name:eu", NULLIF(tags->'name:fr', '') AS "name:fr", NULLIF(tags->'name:it',
-      '') AS "name:it", NULLIF(tags->'name:la', '') AS "name:la", NULLIF(tags->'name:nl',
-      '') AS "name:nl", NULLIF(tags->'name:oc', '') AS "name:oc", NULLIF(tags->'name:pl',
-      '') AS "name:pl", NULLIF(tags->'name:pt', '') AS "name:pt", NULLIF(tags->'name:ru',
-      '') AS "name:ru", NULLIF(tags->'name_int', '') AS "name_int", NULLIF(tags->'name:latin',
+    table: (SELECT geometry, name, name_en, name_de, NULLIF(tags->'name:en', '') AS
+      "name:en", NULLIF(tags->'name:la', '') AS "name:la", NULLIF(tags->'name:ru',
+      '') AS "name:ru", NULLIF(tags->'name:kk', '') AS "name:kk", NULLIF(tags->'name:be',
+      '') AS "name:be", NULLIF(tags->'name_int', '') AS "name_int", NULLIF(tags->'name:latin',
       '') AS "name:latin", NULLIF(tags->'name:nonlatin', '') AS "name:nonlatin", class,
       brunnel FROM layer_waterway(!bbox!, z(!scale_denominator!))) AS t
     type: postgis
     user: nice_user
   id: waterway
-  properties: {buffer-size: 4}
+  properties:
+    buffer-size: 4
   srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0
     +units=m +nadgrids=@null +wktext +no_defs +over
 - Datasource:
     dbname: gis
-    extent: [-20037508.34, -20037508.34, 20037508.34, 20037508.34]
+    extent:
+    - -20037508.34
+    - -20037508.34
+    - 20037508.34
+    - 20037508.34
     geometry_field: geometry
     host: localhost
     key_field: ''
@@ -63,12 +71,17 @@ Layer:
     type: postgis
     user: nice_user
   id: landcover
-  properties: {buffer-size: 4}
+  properties:
+    buffer-size: 4
   srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0
     +units=m +nadgrids=@null +wktext +no_defs +over
 - Datasource:
     dbname: gis
-    extent: [-20037508.34, -20037508.34, 20037508.34, 20037508.34]
+    extent:
+    - -20037508.34
+    - -20037508.34
+    - 20037508.34
+    - 20037508.34
     geometry_field: geometry
     host: localhost
     key_field: ''
@@ -82,12 +95,17 @@ Layer:
     type: postgis
     user: nice_user
   id: landuse
-  properties: {buffer-size: 4}
+  properties:
+    buffer-size: 4
   srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0
     +units=m +nadgrids=@null +wktext +no_defs +over
 - Datasource:
     dbname: gis
-    extent: [-20037508.34, -20037508.34, 20037508.34, 20037508.34]
+    extent:
+    - -20037508.34
+    - -20037508.34
+    - 20037508.34
+    - 20037508.34
     geometry_field: geometry
     host: localhost
     key_field: ''
@@ -96,27 +114,55 @@ Layer:
     password: nice_password
     port: 5432
     srid: 900913
-    table: (SELECT geometry, class, name, name_en, name_de, NULLIF(tags->'name:br',
-      '') AS "name:br", NULLIF(tags->'name:ca', '') AS "name:ca", NULLIF(tags->'name:co',
-      '') AS "name:co", NULLIF(tags->'name:cs', '') AS "name:cs", NULLIF(tags->'name:de',
-      '') AS "name:de", NULLIF(tags->'name:en', '') AS "name:en", NULLIF(tags->'name:eo',
-      '') AS "name:eo", NULLIF(tags->'name:es', '') AS "name:es", NULLIF(tags->'name:eu',
-      '') AS "name:eu", NULLIF(tags->'name:fr', '') AS "name:fr", NULLIF(tags->'name:it',
-      '') AS "name:it", NULLIF(tags->'name:la', '') AS "name:la", NULLIF(tags->'name:nl',
-      '') AS "name:nl", NULLIF(tags->'name:oc', '') AS "name:oc", NULLIF(tags->'name:pl',
-      '') AS "name:pl", NULLIF(tags->'name:pt', '') AS "name:pt", NULLIF(tags->'name:ru',
-      '') AS "name:ru", NULLIF(tags->'name_int', '') AS "name_int", NULLIF(tags->'name:latin',
+    table: (SELECT osm_id, geometry, name, name_en, name_de, NULLIF(tags->'name:en',
+      '') AS "name:en", NULLIF(tags->'name:la', '') AS "name:la", NULLIF(tags->'name:ru',
+      '') AS "name:ru", NULLIF(tags->'name:kk', '') AS "name:kk", NULLIF(tags->'name:be',
+      '') AS "name:be", NULLIF(tags->'name_int', '') AS "name_int", NULLIF(tags->'name:latin',
+      '') AS "name:latin", NULLIF(tags->'name:nonlatin', '') AS "name:nonlatin", ele,
+      ele_ft, rank FROM layer_mountain_peak(!bbox!, z(!scale_denominator!), !pixel_width!))
+      AS t
+    type: postgis
+    user: nice_user
+  id: mountain_peak
+  properties:
+    buffer-size: 64
+  srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0
+    +units=m +nadgrids=@null +wktext +no_defs +over
+- Datasource:
+    dbname: gis
+    extent:
+    - -20037508.34
+    - -20037508.34
+    - 20037508.34
+    - 20037508.34
+    geometry_field: geometry
+    host: localhost
+    key_field: ''
+    key_field_as_attribute: ''
+    max_size: 512
+    password: nice_password
+    port: 5432
+    srid: 900913
+    table: (SELECT geometry, class, name, name_en, name_de, NULLIF(tags->'name:en',
+      '') AS "name:en", NULLIF(tags->'name:la', '') AS "name:la", NULLIF(tags->'name:ru',
+      '') AS "name:ru", NULLIF(tags->'name:kk', '') AS "name:kk", NULLIF(tags->'name:be',
+      '') AS "name:be", NULLIF(tags->'name_int', '') AS "name_int", NULLIF(tags->'name:latin',
       '') AS "name:latin", NULLIF(tags->'name:nonlatin', '') AS "name:nonlatin", rank
       FROM layer_park(!bbox!, z(!scale_denominator!), !pixel_width!)) AS t
     type: postgis
     user: nice_user
   id: park
-  properties: {buffer-size: 4}
+  properties:
+    buffer-size: 4
   srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0
     +units=m +nadgrids=@null +wktext +no_defs +over
 - Datasource:
     dbname: gis
-    extent: [-20037508.34, -20037508.34, 20037508.34, 20037508.34]
+    extent:
+    - -20037508.34
+    - -20037508.34
+    - 20037508.34
+    - 20037508.34
     geometry_field: geometry
     host: localhost
     key_field: ''
@@ -130,12 +176,17 @@ Layer:
     type: postgis
     user: nice_user
   id: boundary
-  properties: {buffer-size: 4}
+  properties:
+    buffer-size: 4
   srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0
     +units=m +nadgrids=@null +wktext +no_defs +over
 - Datasource:
     dbname: gis
-    extent: [-20037508.34, -20037508.34, 20037508.34, 20037508.34]
+    extent:
+    - -20037508.34
+    - -20037508.34
+    - 20037508.34
+    - 20037508.34
     geometry_field: geometry
     host: localhost
     key_field: ''
@@ -149,12 +200,17 @@ Layer:
     type: postgis
     user: nice_user
   id: aeroway
-  properties: {buffer-size: 4}
+  properties:
+    buffer-size: 4
   srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0
     +units=m +nadgrids=@null +wktext +no_defs +over
 - Datasource:
     dbname: gis
-    extent: [-20037508.34, -20037508.34, 20037508.34, 20037508.34]
+    extent:
+    - -20037508.34
+    - -20037508.34
+    - 20037508.34
+    - 20037508.34
     geometry_field: geometry
     host: localhost
     key_field: ''
@@ -169,12 +225,17 @@ Layer:
     type: postgis
     user: nice_user
   id: transportation
-  properties: {buffer-size: 4}
+  properties:
+    buffer-size: 4
   srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0
     +units=m +nadgrids=@null +wktext +no_defs +over
 - Datasource:
     dbname: gis
-    extent: [-20037508.34, -20037508.34, 20037508.34, 20037508.34]
+    extent:
+    - -20037508.34
+    - -20037508.34
+    - 20037508.34
+    - 20037508.34
     geometry_field: geometry
     host: localhost
     key_field: ''
@@ -188,12 +249,17 @@ Layer:
     type: postgis
     user: nice_user
   id: building
-  properties: {buffer-size: 4}
+  properties:
+    buffer-size: 4
   srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0
     +units=m +nadgrids=@null +wktext +no_defs +over
 - Datasource:
     dbname: gis
-    extent: [-20037508.34, -20037508.34, 20037508.34, 20037508.34]
+    extent:
+    - -20037508.34
+    - -20037508.34
+    - 20037508.34
+    - 20037508.34
     geometry_field: geometry
     host: localhost
     key_field: osm_id
@@ -202,27 +268,26 @@ Layer:
     password: nice_password
     port: 5432
     srid: 900913
-    table: (SELECT osm_id, geometry, name, name_en, name_de, NULLIF(tags->'name:br',
-      '') AS "name:br", NULLIF(tags->'name:ca', '') AS "name:ca", NULLIF(tags->'name:co',
-      '') AS "name:co", NULLIF(tags->'name:cs', '') AS "name:cs", NULLIF(tags->'name:de',
-      '') AS "name:de", NULLIF(tags->'name:en', '') AS "name:en", NULLIF(tags->'name:eo',
-      '') AS "name:eo", NULLIF(tags->'name:es', '') AS "name:es", NULLIF(tags->'name:eu',
-      '') AS "name:eu", NULLIF(tags->'name:fr', '') AS "name:fr", NULLIF(tags->'name:it',
-      '') AS "name:it", NULLIF(tags->'name:la', '') AS "name:la", NULLIF(tags->'name:nl',
-      '') AS "name:nl", NULLIF(tags->'name:oc', '') AS "name:oc", NULLIF(tags->'name:pl',
-      '') AS "name:pl", NULLIF(tags->'name:pt', '') AS "name:pt", NULLIF(tags->'name:ru',
-      '') AS "name:ru", NULLIF(tags->'name_int', '') AS "name_int", NULLIF(tags->'name:latin',
+    table: (SELECT osm_id, geometry, name, name_en, name_de, NULLIF(tags->'name:en',
+      '') AS "name:en", NULLIF(tags->'name:la', '') AS "name:la", NULLIF(tags->'name:ru',
+      '') AS "name:ru", NULLIF(tags->'name:kk', '') AS "name:kk", NULLIF(tags->'name:be',
+      '') AS "name:be", NULLIF(tags->'name_int', '') AS "name_int", NULLIF(tags->'name:latin',
       '') AS "name:latin", NULLIF(tags->'name:nonlatin', '') AS "name:nonlatin", class
       FROM layer_water_name(!bbox!, z(!scale_denominator!))) AS t
     type: postgis
     user: nice_user
   id: water_name
-  properties: {buffer-size: 256}
+  properties:
+    buffer-size: 256
   srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0
     +units=m +nadgrids=@null +wktext +no_defs +over
 - Datasource:
     dbname: gis
-    extent: [-20037508.34, -20037508.34, 20037508.34, 20037508.34]
+    extent:
+    - -20037508.34
+    - -20037508.34
+    - 20037508.34
+    - 20037508.34
     geometry_field: geometry
     host: localhost
     key_field: ''
@@ -231,28 +296,27 @@ Layer:
     password: nice_password
     port: 5432
     srid: 900913
-    table: (SELECT geometry, name, name_en, name_de, NULLIF(tags->'name:br', '') AS
-      "name:br", NULLIF(tags->'name:ca', '') AS "name:ca", NULLIF(tags->'name:co',
-      '') AS "name:co", NULLIF(tags->'name:cs', '') AS "name:cs", NULLIF(tags->'name:de',
-      '') AS "name:de", NULLIF(tags->'name:en', '') AS "name:en", NULLIF(tags->'name:eo',
-      '') AS "name:eo", NULLIF(tags->'name:es', '') AS "name:es", NULLIF(tags->'name:eu',
-      '') AS "name:eu", NULLIF(tags->'name:fr', '') AS "name:fr", NULLIF(tags->'name:it',
-      '') AS "name:it", NULLIF(tags->'name:la', '') AS "name:la", NULLIF(tags->'name:nl',
-      '') AS "name:nl", NULLIF(tags->'name:oc', '') AS "name:oc", NULLIF(tags->'name:pl',
-      '') AS "name:pl", NULLIF(tags->'name:pt', '') AS "name:pt", NULLIF(tags->'name:ru',
-      '') AS "name:ru", NULLIF(tags->'name_int', '') AS "name_int", NULLIF(tags->'name:latin',
+    table: (SELECT geometry, name, name_en, name_de, NULLIF(tags->'name:en', '') AS
+      "name:en", NULLIF(tags->'name:la', '') AS "name:la", NULLIF(tags->'name:ru',
+      '') AS "name:ru", NULLIF(tags->'name:kk', '') AS "name:kk", NULLIF(tags->'name:be',
+      '') AS "name:be", NULLIF(tags->'name_int', '') AS "name_int", NULLIF(tags->'name:latin',
       '') AS "name:latin", NULLIF(tags->'name:nonlatin', '') AS "name:nonlatin", ref,
       ref_length, network::text, class::text, subclass, layer, level, indoor FROM
       layer_transportation_name(!bbox!, z(!scale_denominator!))) AS t
     type: postgis
     user: nice_user
   id: transportation_name
-  properties: {buffer-size: 8}
+  properties:
+    buffer-size: 8
   srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0
     +units=m +nadgrids=@null +wktext +no_defs +over
 - Datasource:
     dbname: gis
-    extent: [-20037508.34, -20037508.34, 20037508.34, 20037508.34]
+    extent:
+    - -20037508.34
+    - -20037508.34
+    - 20037508.34
+    - 20037508.34
     geometry_field: geometry
     host: localhost
     key_field: osm_id
@@ -261,28 +325,27 @@ Layer:
     password: nice_password
     port: 5432
     srid: 900913
-    table: (SELECT osm_id, geometry, name, name_en, name_de, NULLIF(tags->'name:br',
-      '') AS "name:br", NULLIF(tags->'name:ca', '') AS "name:ca", NULLIF(tags->'name:co',
-      '') AS "name:co", NULLIF(tags->'name:cs', '') AS "name:cs", NULLIF(tags->'name:de',
-      '') AS "name:de", NULLIF(tags->'name:en', '') AS "name:en", NULLIF(tags->'name:eo',
-      '') AS "name:eo", NULLIF(tags->'name:es', '') AS "name:es", NULLIF(tags->'name:eu',
-      '') AS "name:eu", NULLIF(tags->'name:fr', '') AS "name:fr", NULLIF(tags->'name:it',
-      '') AS "name:it", NULLIF(tags->'name:la', '') AS "name:la", NULLIF(tags->'name:nl',
-      '') AS "name:nl", NULLIF(tags->'name:oc', '') AS "name:oc", NULLIF(tags->'name:pl',
-      '') AS "name:pl", NULLIF(tags->'name:pt', '') AS "name:pt", NULLIF(tags->'name:ru',
-      '') AS "name:ru", NULLIF(tags->'name_int', '') AS "name_int", NULLIF(tags->'name:latin',
+    table: (SELECT osm_id, geometry, name, name_en, name_de, NULLIF(tags->'name:en',
+      '') AS "name:en", NULLIF(tags->'name:la', '') AS "name:la", NULLIF(tags->'name:ru',
+      '') AS "name:ru", NULLIF(tags->'name:kk', '') AS "name:kk", NULLIF(tags->'name:be',
+      '') AS "name:be", NULLIF(tags->'name_int', '') AS "name_int", NULLIF(tags->'name:latin',
       '') AS "name:latin", NULLIF(tags->'name:nonlatin', '') AS "name:nonlatin", class,
       rank, capital, iso_a2 FROM layer_place(!bbox!, z(!scale_denominator!), !pixel_width!))
       AS t
     type: postgis
     user: nice_user
   id: place
-  properties: {buffer-size: 256}
+  properties:
+    buffer-size: 256
   srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0
     +units=m +nadgrids=@null +wktext +no_defs +over
 - Datasource:
     dbname: gis
-    extent: [-20037508.34, -20037508.34, 20037508.34, 20037508.34]
+    extent:
+    - -20037508.34
+    - -20037508.34
+    - 20037508.34
+    - 20037508.34
     geometry_field: geometry
     host: localhost
     key_field: ''
@@ -291,30 +354,56 @@ Layer:
     password: nice_password
     port: 5432
     srid: 900913
-    table: (SELECT osm_id, geometry, name, name_en, name_de, NULLIF(tags->'name:br',
-      '') AS "name:br", NULLIF(tags->'name:ca', '') AS "name:ca", NULLIF(tags->'name:co',
-      '') AS "name:co", NULLIF(tags->'name:cs', '') AS "name:cs", NULLIF(tags->'name:de',
-      '') AS "name:de", NULLIF(tags->'name:en', '') AS "name:en", NULLIF(tags->'name:eo',
-      '') AS "name:eo", NULLIF(tags->'name:es', '') AS "name:es", NULLIF(tags->'name:eu',
-      '') AS "name:eu", NULLIF(tags->'name:fr', '') AS "name:fr", NULLIF(tags->'name:it',
-      '') AS "name:it", NULLIF(tags->'name:la', '') AS "name:la", NULLIF(tags->'name:nl',
-      '') AS "name:nl", NULLIF(tags->'name:oc', '') AS "name:oc", NULLIF(tags->'name:pl',
-      '') AS "name:pl", NULLIF(tags->'name:pt', '') AS "name:pt", NULLIF(tags->'name:ru',
-      '') AS "name:ru", NULLIF(tags->'name_int', '') AS "name_int", NULLIF(tags->'name:latin',
+    table: (SELECT geometry, housenumber FROM layer_housenumber(!bbox!, z(!scale_denominator!)))
+      AS t
+    type: postgis
+    user: nice_user
+  id: housenumber
+  properties:
+    buffer-size: 8
+  srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0
+    +units=m +nadgrids=@null +wktext +no_defs +over
+- Datasource:
+    dbname: gis
+    extent:
+    - -20037508.34
+    - -20037508.34
+    - 20037508.34
+    - 20037508.34
+    geometry_field: geometry
+    host: localhost
+    key_field: ''
+    key_field_as_attribute: ''
+    max_size: 512
+    password: nice_password
+    port: 5432
+    srid: 900913
+    table: (SELECT osm_id, geometry, name, name_en, name_de, NULLIF(tags->'name:en',
+      '') AS "name:en", NULLIF(tags->'name:la', '') AS "name:la", NULLIF(tags->'name:ru',
+      '') AS "name:ru", NULLIF(tags->'name:kk', '') AS "name:kk", NULLIF(tags->'name:be',
+      '') AS "name:be", NULLIF(tags->'name_int', '') AS "name_int", NULLIF(tags->'name:latin',
       '') AS "name:latin", NULLIF(tags->'name:nonlatin', '') AS "name:nonlatin", class,
       iata, icao, ele, ele_ft FROM layer_aerodrome_label (!bbox!, z(!scale_denominator!),
       !pixel_width!)) AS t
     type: postgis
     user: nice_user
   id: aerodrome_label
-  properties: {buffer-size: 64}
+  properties:
+    buffer-size: 64
   srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0
     +units=m +nadgrids=@null +wktext +no_defs +over
 attribution: <a href="http://www.openmaptiles.org/" target="_blank">&copy; OpenMapTiles</a>
   <a href="http://www.openstreetmap.org/copyright/" target="_blank">&copy; OpenStreetMap
   contributors</a>
-bounds: [-180.0, -85.0511, 180.0, 85.0511]
-center: [-12.2168, 28.6135, 4]
+bounds:
+- -180.0
+- -85.0511
+- 180.0
+- 85.0511
+center:
+- -12.2168
+- 28.6135
+- 4
 description: A tileset showcasing all layers in OpenMapTiles. http://openmaptiles.org
 maxzoom: 14
 minzoom: 0
